@@ -1,0 +1,20 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/todo">back</a>
+    {% for todo in todos %}
+        <form action="/todo/edit" method="POST">
+            edit to<input type="text" value="{{ todo.todo }}" name="todo">
+            <input type="hidden" value="{{ todo.id }}" name="id">
+            <input type="checkbox" name="checked" {{todo.checked ? "checked" : null}}> <br>
+            <input type="submit" value="Edit todo">
+        </form>
+    {% endfor %}
+</body>
+</html>

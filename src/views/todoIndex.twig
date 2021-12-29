@@ -1,0 +1,19 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>jouw todos!</h1>
+    <a href="/todo?sort={{ toggle }}">Sort</a> <br> <br>
+    {% for i in todos %}
+        <label>{{ i.todo }}</label>
+        <input type="checkbox" name={{ i.id }} {{i.checked ? "checked" : null}}> <br>
+    {% endfor %}
+    <a href="/todo/add">Add todo</a>
+    <a href="/todo/edit">Edit todo</a>
+</body>
+</html>
